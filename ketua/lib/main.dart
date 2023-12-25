@@ -4,16 +4,27 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Text('AKU');
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      initialRoute: '/',
+      routes: {
+        //'/': (context) => const SplashScreen(), // Route awal
+        //  '/onboarding': (context) => SecondPage(),
+        // '/login': (context) => ThirdPage(),
+        // '/resgister': (context) => ThirdPage(),
+        // '/home ': (context) => ThirdPage(),
+        // '/news': (context) => ThirdPage(),
+      },
+    );
   }
 }
